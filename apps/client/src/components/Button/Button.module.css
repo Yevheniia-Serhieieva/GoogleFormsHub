@@ -1,0 +1,42 @@
+.button {
+  max-width: 200px;
+  padding: 8px 14px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--bg);
+  color: var(--text-h);
+  transition: all 0.2s ease;
+}
+
+.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.primary:hover,
+.primary:focus {
+  background: var(--accent-hover);
+}
+
+.secondary {
+  background: var(--accent-bg);
+  color: var(--accent);
+}
+
+.secondary:hover,
+.secondary:focus {
+  background: rgba(155, 92, 255, 0.18);
+}
+
+.tertiary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px dashed var(--accent-border);
+}
+
+.tertiary:hover,
+.tertiary:focus {
+  background: var(--accent-bg);
+}

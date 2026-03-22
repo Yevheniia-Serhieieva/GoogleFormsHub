@@ -1,0 +1,11 @@
+{
+  // "compilerOptions": {
+  //   "outDir": "dist"
+  // },
+  // "include": ["src", "../../packages/shared"],
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}

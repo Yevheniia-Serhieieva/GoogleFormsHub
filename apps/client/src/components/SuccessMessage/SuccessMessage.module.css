@@ -1,0 +1,5 @@
+.success {
+  color: var(--accent);
+  font-size: 24px;
+  margin-top: 24px;
+}
