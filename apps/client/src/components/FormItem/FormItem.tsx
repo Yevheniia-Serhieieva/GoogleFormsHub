@@ -95,7 +95,7 @@ export default function FormItem() {
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ values }) => (
+        {({ values }: { values: FormValues }) => (
           <FormikForm className={css.form}>
             <Field
               name="title"
@@ -116,9 +116,15 @@ export default function FormItem() {
             />
 
             <FieldArray name="questions">
-              {({ push, remove }) => (
+              {({
+                push,
+                remove,
+              }: {
+                push: (obj: QuestionForm) => void;
+                remove: (index: number) => void;
+              }) => (
                 <div>
-                  {values.questions.map((q, index) => (
+                  {values.questions.map((q: QuestionForm, index: number) => (
                     <div key={index} className={css.question}>
                       <Field
                         name={`questions.${index}.title`}
@@ -145,9 +151,15 @@ export default function FormItem() {
                       {(q.type === 'MULTIPLE_CHOICE' ||
                         q.type === 'CHECKBOX') && (
                         <FieldArray name={`questions.${index}.options`}>
-                          {({ push: pushOption, remove: removeOption }) => (
+                          {({
+                            push: pushOption,
+                            remove: removeOption,
+                          }: {
+                            push: (value: string) => void;
+                            remove: (index: number) => void;
+                          }) => (
                             <div>
-                              {q.options.map((_, optIndex) => (
+                              {q.options.map((_: string, optIndex: number) => (
                                 <div key={optIndex} className={css.optionWrap}>
                                   <Field
                                     name={`questions.${index}.options.${optIndex}`}
