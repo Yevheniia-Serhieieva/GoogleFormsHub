@@ -1,8 +1,10 @@
 {
-  // "compilerOptions": {
-  //   "outDir": "dist"
-  // },
-  // "include": ["src", "../../packages/shared"],
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "skipLibCheck": true
+  },
+  "include": ["src", "../../packages/shared"],
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },
